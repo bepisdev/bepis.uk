@@ -61,8 +61,7 @@ it would be easy to avoid any pitfalls.
 I knew that it would be a CLI program (it's a git plugin after all). It takes some user input, runs a HTTP request, and performs a file write.
 When writing CLI programs in Go, the go-to solution for the longest time for most people has been [cobra](https://github.com/spf13/cobra). Cobra is
 a fully-fledged framework for building CLI apps and handles everything from flags and options to subcommands and configs, I felt like Cobra was too
-much for what I needed, What I opted for was a library called [pflag](https://github.com/spf13/pflag) which is the underlying library (written)
-by the same developer powering Cobra. `pflag` extends Go's inbuilt `flag` package and is written as a *drop-in* replacement, the main difference is 
+much for what I needed, What I opted for was a library called [pflag](https://github.com/spf13/pflag) which is the underlying library (written by the same developer) powering Cobra. `pflag` extends Go's inbuilt `flag` package and is written as a *drop-in* replacement, the main difference is 
 The inbuilt package only allows you to bind a single flag definition to a single value or option it also defaults to a single dash style, and doesn't allow for
 shortcuts (`-flag` instead of POSIX style `--flag` with `-f` as a shortcut).
 
