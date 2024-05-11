@@ -5,7 +5,7 @@ modDatetime: 2024-05-11
 title: Rewriting a Python project in Go
 slug: rewriting-python-project-in-go
 featured: true
-draft: true
+draft: false
 tags:
   - git
   - python
