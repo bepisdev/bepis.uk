@@ -10,8 +10,7 @@ tags:
   - tutorial
   - git
   - python
-description:
-  A simple tutorial on building your own git plugin using Python
+description: A simple tutorial on building your own git plugin using Python
 ---
 
 ## Introduction
@@ -23,7 +22,7 @@ Plugins are a way to extend / automate git related tasks and run them as a part 
 tool suite.
 
 We will start with an overview of the git plugin system and what a git plugin looks like. Before
-building out a quick example that you can install and use on your machine immediately. 
+building out a quick example that you can install and use on your machine immediately.
 
 ### How Git Plugins Works?
 
@@ -48,9 +47,9 @@ go ahead and create a virtualenv inside of that directory.
 ```
 ~/code $ mkdir my-git-plugin
 ~/code $ cd my-git-plugin
-~/my-git-plugin $ python -m virtualenv ./venv 
+~/my-git-plugin $ python -m virtualenv ./venv
 ~/my-git-plugin $ source ./venv/bin/activate
-~/my-git-plugin (venv) $ 
+~/my-git-plugin (venv) $
 ```
 
 Now we have our virtualenv setup we can start writing some code. Create a new file named `git-myplugin.py` (You can name it whatever you want as long as it starts with `git-` and ends with `.py` for the sake of simplicity i am going with `myplugin`) The `myplugin` part of the filename is what will become our sub command when we call it through git.
@@ -96,7 +95,7 @@ prefixing the function name is simply an idiom I use to identify helpers and uti
 import os
 
 def _walk_dir(dir):
-  """Walk through dir and return true if 
+  """Walk through dir and return true if
   we find a directory labelled .git, otherwis
   return false"""
   for filename in os.listdir(dir):
@@ -174,28 +173,31 @@ At this current point we have a fully functional script that does the following:
 
 - Takes a directory path via a CLI option.
 - Scans that directory to determine if its a Git repo or not
-- If it is a Git repo then run git pull, and then push all changes and 
-tags up to the remote.
+- If it is a Git repo then run git pull, and then push all changes and
+  tags up to the remote.
 
 The only thing left to do is make sure our installed Git will pick up our script
 and register it as a command so instead of running the script the old fashioned way
 we can call it as a git subcommand like illustrated earlier.
 
 To accomplish this, the script will have to be executeable, exist on `$PATH`, and follow
-the naming convention without a file-extension. Here are the commands step-by-step to 
+the naming convention without a file-extension. Here are the commands step-by-step to
 get the script installed.
 
 > 1. Create a copy with correct name
+
 ```
 ~/my-git-plugin (venv) $ cp git-myplugin.py git-myplugin
 ```
 
 > 2. Set execution permissions correctly
+
 ```
 ~/my-git-plugin (venv) $ chmod a+x ./git-myplugin
 ```
 
 > 3. Move the new executable to a directory on `$PATH` for this example I will use `/usr/bin`
+
 ```
 ~/my-git-plugin (venv) $ sudo mv ./git-myplugin /usr/bin/git-myplugin
 ```
@@ -219,7 +221,7 @@ def _run_git_commands(repo_dir):
   subprocess.run(["git", "push", "--tags"])
 
 def _walk_dir(dir):
-  """Walk through dir and return true if 
+  """Walk through dir and return true if
   we find a directory labelled .git, otherwis
   return false"""
   for filename in os.listdir(dir):
