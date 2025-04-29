@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: ../layouts/PortfolioLayout.astro
 title: "Portfolio"
 ---
 
@@ -7,7 +7,7 @@ A List of noteable projects, and examples of my work.
 
 ## Bepis.uk (This Website)
 
-> SCREENSHOT HERE
+![bepsuk](https://api.screenshotone.com/take?access_key=yqcPVK7SZYK9Tw&url=https%3A%2F%2Fbepis.uk&format=jpg&block_ads=true&block_cookie_banners=true&block_banners_by_heuristics=false&block_trackers=true&delay=0&timeout=60&response_type=by_format&image_quality=80)
 
 This website serves as my personal homepage, portfolio, and a blog to exercise creative technical writiing.
 
