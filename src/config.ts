@@ -6,7 +6,7 @@ export const SITE: Site = {
   desc: "My blog and portfolio.",
   title: "BEPIS",
   ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
+  lightAndDarkMode: false,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
